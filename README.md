@@ -38,3 +38,66 @@
 
 ## Installation
 
+Follow the steps below to set up and run the project on your local machine:
+
+### 1. Download the Project
+
+To download only the latest version of the project (without the full commit history), [click here](https://github.com/your-username/authAPI/archive/refs/heads/main.zip) to download the source code as a ZIP file. Extract the contents to a directory on your machine.
+
+Alternatively, you can use `git clone` to download just the latest commit:
+
+```bash
+git clone --depth 1 https://github.com/your-username/authAPI.git
+cd authAPI
+```
+
+### 2. Create and Activate a Virtual Environment
+
+For a cleaner setup, create and activate a virtual environment:
+```bash
+python3 -m venv venv
+
+source venv/bin/activate  # On Linux/macOS
+venv\Scripts\activate  # On Windows: 
+```
+
+### 3. Install Dependencies
+
+With the virtual environment active, install the required libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure the Project
+
+Open the configuration file in the project directory `config.py` and update the following settings:
+
+```dotenv
+SECRET_KEY = "your-secret-key-here"
+DB_HOST = "host"
+DB_USER = "user"
+DB_PASSWORD = "password"
+DB_NAME = "database-name"
+```
+
+- Replace `your_secret_key` with a unique secret key.
+- Replace `host`, `user`, `password` and `database-name` with your MySQL database credentials.
+
+### 5. Run the Project to Initialize Database Tables
+
+To set up the database tables, run the project for the first time in the project diretory:
+
+```bash
+python main.py
+```
+
+The API will be available at `http://127.0.0.1:5000/` by default.
+
+You can also configure the host and port directly from the `.env` file:
+
+```dotenv
+# API CONFIG
+API_HOST="127.0.0.1"
+API_PORT="5000"
+```

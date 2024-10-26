@@ -137,7 +137,7 @@ def logout():
 if __name__ == "__main__":
     database.verifyUserTable()
     app.run(
-        host="127.0.0.1",
-        port=5000,
+        host=Config.API_HOST,
+        port=Config.API_PORT,
         debug=True
     )
