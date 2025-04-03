@@ -4,7 +4,7 @@
 
 ![Flask](https://img.shields.io/badge/Flask-v2.0+-blue) ![Python](https://img.shields.io/badge/Python-3.8+-green) ![License](https://img.shields.io/badge/License-MIT-brightgreen)
 
-> A lightweight, scalable authentication API built with Flask, Flask_Session and PyMySQL. This API provides secure endpoints for registration, login and management of user sessions with log system.
+> A lightweight, scalable authentication API built with Flask, Flask-CORS, and Flask-JWT-Extended. This API provides secure endpoints for registration, login, and user authentication with a log system.
 
 ## Contents
 - [Features](#features)
@@ -20,8 +20,9 @@
 
 ## Features
 - **User Registration**: Allows new users to register with a secure password.
-- **User Login**: Authenticates users and establishes sessions.
-- **Session Management**: Manages user sessions securely using Flask-Session.
+- **User Login**: Authenticates users and generates JWT tokens.
+- **JWT Authentication**: Uses Flask-JWT-Extended to issue and validate access tokens.
+- **CORS Handling**: Implements Flask-CORS to manage cross-origin requests.
 - **Password Hashing**: Uses bcrypt for password hashing and validation.
 - **Error Handling**: Provides clear error messages for authentication failures.
 - **Environment-Based Configuration**: Easy setup with `.env` for sensitive data.
@@ -30,7 +31,8 @@
 ## Requirements
 - Python 3.8+
 - Flask
-- Flask-Session
+- Flask-CORS
+- Flask-JWT-Extended
 - PyMySQL
 - bcrypt
 - python-dotenv
@@ -49,7 +51,6 @@ Alternatively, you can use `git clone` to download just the latest commit:
 ```bash
 git clone --depth 1 https://github.com/your-username/authAPI.git
 cd authAPI
-```
 
 ### 2. Create and Activate a Virtual Environment
 
